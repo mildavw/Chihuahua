@@ -1,6 +1,6 @@
 = chihuahua
 
-Description goes here.
+Chihuahua is a simple feature flagging gem for use in Rails. Enabled features are stored in a yaml file. Feature sets are configured per environment.
 
 == Contributing to chihuahua
  
@@ -16,4 +16,3 @@ Description goes here.
 
 Copyright (c) 2012 Dave Miller. See LICENSE.txt for
 further details.
-
