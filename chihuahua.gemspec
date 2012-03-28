@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "chihuahua.gemspec",
     "lib/chihuahua.rb",
     "spec/chihuahua_spec.rb",
     "spec/spec_helper.rb",

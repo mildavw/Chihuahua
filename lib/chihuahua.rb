@@ -32,7 +32,7 @@ module Chihuahua
     end
 
     def load_enabled_features_from_yaml_file
-      h = YAML.load_file( File.join(File.dirname(__FILE__), '..', 'config', 'chihuahua.yml') )
+      h = YAML.load_file( File.join(Rails.root.join('config', 'chihuahua.yml') ) )
       h[ environment ].to_a.map(&:to_sym)
     end
     # def load_enabled_features_from_cms_stringtable
