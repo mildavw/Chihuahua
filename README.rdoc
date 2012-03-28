@@ -2,6 +2,82 @@
 
 Chihuahua is a simple feature flagging gem for use in Rails. Enabled features are stored in a yaml file. Feature sets are configured per environment.
 
+= Configuration
+
+Add this line to app/assets/javascripts/application.js
+
+    //= require chihuahua
+
+Or if you have application.js.coffee then make it:
+
+    #= require chihuahua
+
+
+Create the file config/chihuahua.yml with your environments and enabled features:
+
+    # Chiuhuahua  expects 1 level of environment keys and beneath each, an array of features
+    # that are to be enabled. Array elements start with a dash.
+    production:
+      - cool_feature
+      
+    staging:
+      - cool_feature
+    
+    alpha:
+      - cool_feature
+      - upcoming_feature
+    
+    development:
+      - cool_feature
+      - upcoming_feature
+      - the_bleeding_edge
+    
+    test: #best practice is to specify the feature-state in your test rather than here.
+
+If you use cucumber, add this to your step definitions
+
+    Given /^the (.*) feature is (en|dis)abled$/ do |nickname, abled|
+      Chihuahua.set(nickname, 'en' == abled)
+    end
+
+== Usage
+
+Chihuahua gives you a feature? method in views and controllers.
+
+In your views:
+
+    <% if feature?(:cool_feature) %>
+      I'm cool!
+    <% else %>
+      I'm lame.
+    <% end %>
+
+In your controllers:
+
+    def index
+      return render(:text => 'Feature not enabled.', :status => 404) unless feature?(:cool_feature)
+
+And a showFeature() function in your javascript:
+
+    if showFeature('cool_feature') {
+      console.info('cool!');
+    } else {
+      console.info('lame.');
+    }
+
+In your cucumber tests:
+
+    Given the the_bleeding_edge feature is enabled
+    When I visit the home page
+    Then I see "I'm cool!"
+
+In your other tests you can turn features on and off like so:
+
+    describe 'index page' do
+      before :all do
+        Chihuahua.enable(:cool_feature)
+      end
+
 == Contributing to chihuahua
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
