@@ -1,3 +1,5 @@
+require 'engine'
+
 module Chihuahua
 
   class << self
@@ -55,14 +57,7 @@ module Chihuahua
       Chihuahua.enabled?(nickname)
     end
   end
-end
 
-ActiveSupport.on_load(:action_view) do
-  include Chihuahua::HelperMethods
-end
-
-ActiveSupport.on_load(:action_controller) do
-  include Chihuahua::ControllerMethods
 end
 
 #TODO: add a feature? method useful in models and routes? Or just override Object?

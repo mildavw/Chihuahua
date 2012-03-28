@@ -1,4 +1,3 @@
-// TODO: Make sure this gets loaded afresh (no pipeline compiling  )
 var showFeature = function(feature)  {
   var config = <%= Chihuahua.enabled_features.to_json %>;
   return (config.indexOf(feature) >= 0);
