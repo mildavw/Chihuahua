@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "chihuahua"
   gem.homepage = "http://github.com/mildavw/chihuahua"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Rails feature flagging}
+  gem.description = %Q{Basic feature flagging/flipping for Rails 3.1 or later. Features are enabled by environment on deploy}
   gem.email = "dave.miller@renewfund.com"
   gem.authors = ["Dave Miller"]
   # dependencies defined in Gemfile
