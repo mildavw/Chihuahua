@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "chihuahua"
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dave Miller"]
-  s.date = "2012-03-28"
+  s.date = "2012-03-30"
   s.description = "Basic feature flagging/flipping for Rails 3.1 or later. Features are enabled by environment on deploy"
   s.email = "dave.miller@renewfund.com"
   s.extra_rdoc_files = [
@@ -25,9 +25,11 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "assets/javascripts/chihuahua.js.erb",
+    "app/assets/javascripts/chihuahua.js.erb",
+    "app/assets/javascripts/index.js",
     "chihuahua.gemspec",
     "lib/chihuahua.rb",
+    "lib/engine.rb",
     "spec/chihuahua_spec.rb",
     "spec/spec_helper.rb"
   ]
